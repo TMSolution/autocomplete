@@ -1,6 +1,6 @@
 {
-	"name":"autocompletelikegoogle",
-	"version":"1.2.6",
+	"name":"autocompletelikegoogle-tmsolution",
+	"version":"1.0",
 	"main": [
 		"jquery.autocomplete.js",
 		"jquery.autocomplete.css"
