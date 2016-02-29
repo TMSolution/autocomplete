@@ -1110,6 +1110,7 @@
 			return publics[_options].call(this, _second, _third);
 		}
 		return this.each(function () {
+			defaultSetting.input=$(this);
 			var options = $.extend(true, {}, defaultSetting, _options);
 			init(this, options);
 		});
