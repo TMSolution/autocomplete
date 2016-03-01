@@ -659,7 +659,7 @@
 				$dropdown.find('div').removeClass('active');
 				$(this).addClass('active');
 			})
-			.on('mousedown touchstart','div',function(){
+			.on('mousedown','div',function(){
 				$dropdown.find('div').removeClass('active');
 				$(this).addClass('active');
 				$input.trigger('pick.xdsoft');
@@ -735,7 +735,8 @@
 				return true;
 				case ENTER:
 					if (iOpen) {
-						$input.trigger('pick.xdsoft');
+                                            
+                                            $input.trigger('getResult.tmsoluiton');
 						event.preventDefault();
 						return false;
 					} else {
@@ -980,6 +981,14 @@
 		})
 		
 		$input	
+                        .on('getResult.tmsoluiton',function()
+                {
+                        
+                            $input.trigger('close.xdsoft');
+                            $input.closest('form').submit();
+                    
+                    
+                })
 			.on('close.xdsoft',function(){
 				if (!iOpen) {
 					return;
@@ -1110,7 +1119,7 @@
 			return publics[_options].call(this, _second, _third);
 		}
 		return this.each(function () {
-			defaultSetting.input=$(this);
+                        defaultSetting.input=$(this);
 			var options = $.extend(true, {}, defaultSetting, _options);
 			init(this, options);
 		});
